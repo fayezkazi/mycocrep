@@ -1,0 +1,57 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    controllerName="mycoc.rep.mycocrep.controller.COCDetails"
+    busyIndicatorDelay="0"
+>
+    <Page
+        id="COCDetailsPage"
+        title="{i18n>COCDetails} {VBELN}"
+        showNavButton="true"
+        navButtonPress=".onNavBack"
+        class="sapUiResponsiveContentPadding"
+    >
+        <content>
+            <Panel
+                id="COCDetailsPanel"
+                width="auto"
+                class="sapUiNoContentPadding"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Title
+                            text="{i18n>DeliveryNumber} {VBELN}"
+                            level="H2"
+                        />
+                        <ToolbarSpacer />
+                    </Toolbar>
+                </headerToolbar>
+
+                <content>
+                    <f:SimpleForm
+                        editable="false"
+                        layout="ResponsiveGridLayout"
+                        labelSpanL="3"
+                        labelSpanM="3"
+                        emptySpanL="4"
+                        emptySpanM="4"
+                        columnsL="1"
+                        columnsM="1"
+                    >
+                        <f:content>
+                            <Label text="{i18n>DeliveryNumber}" />
+                            <Text text="{VBELN}" />
+                            <Label text="{i18n>CertificateNumber}" />
+                            <Text text="{CERT}" />
+                            <Label text="{i18n>SourceCountry}" />
+                            <Text text="{SOURCE}" />
+                            <Label text="{i18n>TargetCountry}" />
+                            <Text text="{TARGET}" />
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

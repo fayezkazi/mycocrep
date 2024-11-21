@@ -1,0 +1,101 @@
+<mvc:View
+    controllerName="mycoc.rep.mycocrep.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"  
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+	
+
+        <content>
+            <Table
+                id="_IDGenTable1"
+                items="{oCOCJSONModel>/COCData}"
+                growing="true"
+                growingThreshold="3"
+            >
+                <columns>
+                    <Column id="_IDGenColumn1">
+                        <Label
+                            id="_IDGenLabel1"
+                            text="Delivery Number"
+                        />
+                    </Column>
+                    <Column id="_IDGenColumn2">
+                        <Label
+                            id="_IDGenLabel2"
+                            text="Certificate Number"
+                        />
+                    </Column>
+                    <Column id="_IDGenColumn3">
+                        <Label
+                            id="_IDGenLabel3"
+                            text="Certificate Date"
+                        />
+                    </Column>
+                    <Column id="_IDGenColumn4">
+                        <Label
+                            id="_IDGenLabel4"
+                            text="Source Country"
+                        />
+                    </Column>
+                    <Column id="_IDGenColumn5">
+                        <Label
+                            id="_IDGenLabel5"
+                            text="Target Country"
+                        />
+                    </Column>
+                    <Column id="_IDGenColumn6">
+                        <Label
+                            id="_IDGenLabel6"
+                            text="Action"
+                        />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press=".onListItemPressed">
+                        <cells>
+                            <Text
+                                id="_IDGenText1"
+                                text="{oCOCJSONModel>VBELN}"
+                            />
+                            <Text
+                                id="_IDGenText2"
+                                text="{oCOCJSONModel>CERT}"
+                            />
+                            <Text
+                                id="_IDGenText3"
+                                text="{oCOCJSONModel>CDATE}"
+                            />
+                            <Text
+                                id="_IDGenText4"
+                                text="{oCOCJSONModel>SOURCE}"
+                            />
+                            <Text
+                                id="_IDGenText5"
+                                text="{oCOCJSONModel>TARGET}"
+                            />
+                            <HBox id="_IDHBox">
+                                <Button
+                                    id="_IDUpdateRow"
+                                    icon="sap-icon://edit"
+                                    press="onUpdateRecord"
+                                    class="sapUiTinyMarginEnd"
+                                />
+                                <Button
+                                    id="_IDDeleteRow"
+                                    icon="sap-icon://delete"
+                                    press="onDeleteRecord"
+                                    type="Reject"
+                                />
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

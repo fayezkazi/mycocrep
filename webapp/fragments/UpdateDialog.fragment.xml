@@ -1,0 +1,76 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+>
+    <Dialog
+        id="_IDGenDialog1"
+        title="Update COC details"
+    >
+        <content>
+            <form:SimpleForm id="_IDGenSimpleForm1">
+                <form:content>
+                    <Label
+                        id="_IDGenLabelF1"
+                        text="Delivery Number"
+                    />
+                    <Input
+                        id="_IDGenInputF1"
+                        editable="false"
+                        value="{oCOCPayloadModel>/oPayload/VBELN}"
+                    />
+                    <Label
+                        id="_IDGenLabelF2"
+                        text="Certificate Number"
+                    />
+                    <Input
+                        id="_IDGenInputF2"
+                        editable="true"
+                        value="{oCOCPayloadModel>/oPayload/CERT}"
+                    />
+                    <Label
+                        id="_IDGenLabelF3"
+                        text="Certificate Date"
+                    />
+                    <Input
+                        id="_IDGenInputF3"
+                        editable="true"
+                        value="{oCOCPayloadModel>/oPayload/CDATE}"
+                    />
+                    <Label
+                        id="_IDGenLabelF4"
+                        text="Source Country"
+                    />
+                    <Input
+                        id="_IDGenInputF4"
+                        editable="true"
+                        value="{oCOCPayloadModel>/oPayload/SOURCE}"
+                    />
+                    <Label
+                        id="_IDGenLabelF5"
+                        text="Target Country"
+                    />
+                    <Input
+                        id="_IDGenInputF5"
+                        editable="true"
+                        value="{oCOCPayloadModel>/oPayload/TARGET}"
+                    />
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <beginButton>
+            <Button
+                id="_IDButtonSave"
+                text="Save"
+                press="onSaveRecord"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                id="_IDButtonCancel"
+                text="Cancel"
+                press="onCancelRecord"
+            />
+        </endButton>
+    </Dialog>
+</c:FragmentDefinition>
